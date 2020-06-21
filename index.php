@@ -21,7 +21,8 @@
 
             
         </div>
-        <div id="文章"></div>
+ 
+        <div class="result deepl"></div>
     </div>
 </body>
 
@@ -43,26 +44,24 @@
 
 
 
-
-
         // send it out
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "translate.php");
-        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        xhr.send(json);
+        let xhr1 = new XMLHttpRequest();
+        xhr1.open("POST", "translateDeepL.php");
+        xhr1.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr1.send(json);
 
-        xhr.onload = function() {
-            if (xhr.status != 200) { // HTTP error?
+        xhr1.onload = function() {
+            if (xhr1.status != 200) { // HTTP error?
                 // handle error
-                alert('Error: ' + xhr.status);
+                alert('Error: ' + xhr1.status);
                 return;
             }
 
 
 
 
-            // get the response from xhr.response
-            $('#文章').innerHTML = xhr.response;
+            // get the response from xhr1.response
+            $('.deepl').innerHTML = xhr1.response;
         };
 
 
@@ -126,7 +125,7 @@
             color: #efefef;
         }
 
-        #文章 div {
+        .result div {
             margin-top: 6px;
             font-size: 2rem;
             text-align: justify;
@@ -225,7 +224,7 @@
             color: #efefef;
         }
 
-        #文章 div {
+        .result div {
             margin-top: 20px;
             text-align: justify;
         }
