@@ -12,8 +12,7 @@
         <div id="标题">Demo</div>
         <div id="主题">
 
-            <textarea id="chinesenovel" rows="10" cols="50">
-               请在这里随便输入一些中文小说...
+            <textarea id="chinesenovel" rows="10" cols="50" maxlength="2000">
             </textarea>
             <div>
             <button onclick="翻译()">Translate</button>
